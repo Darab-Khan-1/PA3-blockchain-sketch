@@ -45,7 +45,7 @@ async function getResults()
 		const clearingPrices = results.clearingPrices;
 		
 		// If no results, print nothing
-		if (buyerAddresses.length === 0) {
+		if (!buyerAddresses || buyerAddresses.length === 0) {
 			return;
 		}
 		
@@ -55,10 +55,10 @@ async function getResults()
 		// Print each match
 		for (let i = 0; i < buyerAddresses.length; i++) {
 			const index = i + 1;
-			const sellerAddr = sellerAddresses[i];
-			const buyerAddr = buyerAddresses[i];
-			const clearingPrice = clearingPrices[i];
-			const quantity = quantities[i];
+			const sellerAddr = sellerAddresses[i] || '';
+			const buyerAddr = buyerAddresses[i] || '';
+			const clearingPrice = clearingPrices[i] || 0;
+			const quantity = quantities[i] || 0;
 			
 			console.log(index, sellerAddr, buyerAddr, clearingPrice, quantity);
 		}

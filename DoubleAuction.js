@@ -38,20 +38,12 @@ var myAccount = "";
 
 async function DoubleAuction()
 {
-
-	//Your code for calling the double auction goes here. Feel free to create more functions in this script or in the smart contract
-	let runnable = false;
-	if(runnable) //replace this with an appropriate condition 
-	{
-		console.log('Double Auction called');
+	try {
+		const result = await contractInstance.methods.doubleAuction().send({from: myAccount, gasLimit: '0xe00000'});
+		console.log('Double Auction Successful');
+	} catch (error) {
+		console.log('Double Auction not Successful');
 	}
-	else
-	{
-		console.log('Double Auction not called'); //the double auction is going to be called once every 5 minutes at maximum, replace the 100 with a maximum time
-		console.log('Please edit this script');
-	}
-
-
 }
 
 

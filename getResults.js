@@ -36,9 +36,36 @@ const contractInstance = new web3.eth.Contract(contractAbi,contAddress)  //this 
 
 async function getResults()
 {
-	//your code to receive and print the results from the last Double Auction goes here
-	console.log('index\t sellAddresses\t\t\t\t\t buyAddresses\t\t\t\t\t C\t Q');
-	
+	try {
+		const results = await contractInstance.methods.getResults().call();
+		
+		const buyerAddresses = results.buyerAddresses;
+		const sellerAddresses = results.sellerAddresses;
+		const quantities = results.quantities;
+		const clearingPrices = results.clearingPrices;
+		
+		// If no results, print nothing
+		if (buyerAddresses.length === 0) {
+			return;
+		}
+		
+		// Print header
+		console.log('index', 'sellAddresses', 'buyAddresses', 'C', 'Q');
+		
+		// Print each match
+		for (let i = 0; i < buyerAddresses.length; i++) {
+			const index = i + 1;
+			const sellerAddr = sellerAddresses[i];
+			const buyerAddr = buyerAddresses[i];
+			const clearingPrice = clearingPrices[i];
+			const quantity = quantities[i];
+			
+			console.log(index, sellerAddr, buyerAddr, clearingPrice, quantity);
+		}
+	} catch (error) {
+		// If error, print nothing
+		return;
+	}
 }
 
 async function main()

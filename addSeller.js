@@ -43,8 +43,8 @@ async function get()
 
 async function addSeller(quantity, value, fromAddress)
 {
-  //your code to addSeller here
-  console.log('Your code goes here!');
+  const result = await contractInstance.methods.addSeller(quantity, value).send({from: fromAddress, gasLimit: '0xe00000'});
+  console.log('submitted a sell bid of:', `(${quantity}, ${value})`, 'from account:', fromAddress);
 }
 
 

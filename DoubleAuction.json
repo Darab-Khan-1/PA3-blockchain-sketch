@@ -1,0 +1,61 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "quantity",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "price",
+          "type": "uint256"
+        }
+      ],
+      "name": "addBuyer",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "quantity",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "price",
+          "type": "uint256"
+        }
+      ],
+      "name": "addSeller",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "doubleAuction",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getResults",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "returnedInteger",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "608060405234801561001057600080fd5b5061019b806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80631b3fa324146100515780634717f97c1461006d578063599ceb851461008b578063fbca50d9146100a7575b600080fd5b61006b600480360381019061006691906100fb565b6100b1565b005b6100756100b5565b604051610082919061014a565b60405180910390f35b6100a560048036038101906100a091906100fb565b6100ba565b005b6100af6100be565b005b5050565b600090565b5050565b565b600080fd5b6000819050919050565b6100d8816100c5565b81146100e357600080fd5b50565b6000813590506100f5816100cf565b92915050565b60008060408385031215610112576101116100c0565b5b6000610120858286016100e6565b9250506020610131858286016100e6565b9150509250929050565b610144816100c5565b82525050565b600060208201905061015f600083018461013b565b9291505056fea26469706673582212203a6f9f59f617289af0b77c4d0546d96c8ae0bf66a55219b7d5ba065a979ba9ac64736f6c63430008090033"
+}

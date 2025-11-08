@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: HF
-pragma solidity ^0.8.1;
+pragma solidity ^0.8.7;
 
 /*
 Feel free to create your own functions and interact with them in JavaScript
